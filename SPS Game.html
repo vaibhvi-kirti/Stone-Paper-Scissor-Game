@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STONE-PAPER-SCISSOR</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(137, 184, 35);
+    }
+    h1{
+      display: flex;
+      justify-content: center;
+      font-family: Georgia, 'Times New Roman', Times, serif\;
+    }
+    h3{
+      display: box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-top: 50px;
+      margin-right: 100px;
+    }
+
+    .A{
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 15px;
+      height: 50px;
+      width: 80px;
+      border: none;
+      border-radius: 8px;
+      background-color:white;
+      font-size: 16px;
+      font-weight:bold;
+    }
+    div{
+      margin-left: 600px;
+      margin-top: 10px;
+      border: none;
+    }
+    .CC{
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>STONE-PAPER-SCISSOR</h1>
+  <div>
+  <button class="A" onclick=" um='Stone';
+  r();
+  getResult(um,cm);
+
+
+"> <img class="CC" src="Stone-removebg-preview.png" alt="Stone Image"></button>
+  <button class="A" onclick=" um='Paper';
+  r();
+  getResult(um,cm);
+"> <img class="CC" src="Paper-removebg-preview.png" alt="Paper Image"></button>
+  <button class="A" onclick=" um='Scissor';
+ r();
+ getResult(um,cm);
+
+"> <img class="CC" src="Scissor-removebg-preview.png" alt="Scissor Image"></button>
+<h3 id="AA"></h3>
+</div>
+<script>
+  let um='';
+  let cm='';
+  let result='';
+  let m=0;
+  let score={
+     win:0 ,
+    loss: 0,
+    tie:0,
+   };
+  function r(){
+    m=Math.random()*3;
+  if(m>=0 && m<1)
+  cm='Stone';
+else if(m>=1&&m<2)
+cm='Paper';
+else
+cm='Scissor';
+   }
+   function getResult(um,cm){
+if(um=='Stone')
+{
+  if(cm=='Bat')
+{
+result='TIE';
+score.tie++;
+}
+else if(cm=='Scissor'){
+result='USER WON';
+score.win++;
+}
+else if(cm=='Paper'){
+result='COMPUTER WON';
+score.loss++;}
+document.querySelector('#AA').innerText=(`Your choice: ${um}
+Computer's Choice: ${cm}
+Result is ${result}:Win: ${score.win},Loss:${score.loss}, Tie:${score.tie}`);
+}
+if(um=='Paper')
+{
+  if(um==cm){
+result='TIE';
+score.tie++;
+}
+else if(cm=='Scissor')
+{
+result='COMPUTER WON';
+score.loss++;}
+else if(cm=='Stone'){
+result='USER WON';
+score.win++;
+}
+document.querySelector('#AA').innerText=(`Your choice: ${um}
+Computer's Choice: ${cm}
+Result is ${result}:Win: ${score.win},Loss:${score.loss}, Tie:${score.tie}`);
+}
+if(um=='Scissor')
+{
+  if(um==cm){
+result='TIE';
+score.tie++;
+}
+else if(cm=='Paper')
+{
+result='USER WON';
+score.win++;
+}
+else if(cm=='Stone')
+{
+result='COMPUTER WON';
+score.loss++;}
+document.querySelector('#AA').innerText=(`Your choice: ${um}
+ Computer's Choice: ${cm}
+  Result is ${result}:Win: ${score.win},Loss:${score.loss}, Tie:${score.tie}`);
+}
+   }
+   
+</script>
+</body>
+</html>
